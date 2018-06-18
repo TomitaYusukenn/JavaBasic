@@ -26,7 +26,7 @@ public class FileReaderClass {
 	 */
 	public static Book[] readBookDataFile() {
 		String[] fileRow = new String[65536];	/* とりあえずたくさん確保：List<String>を使いたい */
-		Book[] bookList = null;				/* 初期値：List<Book>を使いたい */
+	Book[] bookList =null ;				/* 初期値：List<Book>を使いたい */
 		int index = 0;
 
 		try(Scanner scanner = new Scanner(new File("csv/bookData.csv"))) {
@@ -35,7 +35,7 @@ public class FileReaderClass {
 				index++;
 			}
 
-			bookList = new Book[index];
+		bookList = new Book[index];
 			for (int i = 0; i < index; i++) {
 				String[] rowArray = fileRow[i].split(",");
 				bookList[i] = new Book(
